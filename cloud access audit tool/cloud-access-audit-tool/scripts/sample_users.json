@@ -1,0 +1,68 @@
+{
+  "as_of": "2026-11-02",
+  "users": [
+    {
+      "username": "root", "type": "root", "mfa_enabled": true,
+      "created": "2022-01-10", "last_login": "2026-09-15",
+      "access_keys": [{"id": "AKIAROOT0001", "created": "2023-02-01", "last_used": "2026-08-01", "active": true}],
+      "policies": ["AdministratorAccess"]
+    },
+    {
+      "username": "alice.admin", "type": "human", "mfa_enabled": false,
+      "created": "2023-04-12", "last_login": "2026-11-01",
+      "access_keys": [],
+      "policies": ["AdministratorAccess"]
+    },
+    {
+      "username": "bob.dev", "type": "human", "mfa_enabled": true,
+      "created": "2024-05-20", "last_login": "2026-10-30",
+      "access_keys": [{"id": "AKIABOB00001", "created": "2025-01-10", "last_used": "2026-10-29", "active": true}],
+      "policies": ["DeveloperAccess"]
+    },
+    {
+      "username": "carol.finance", "type": "human", "mfa_enabled": false,
+      "created": "2024-08-01", "last_login": "2026-10-28",
+      "access_keys": [],
+      "policies": ["ReadOnlyAccess"]
+    },
+    {
+      "username": "dave.contractor", "type": "human", "mfa_enabled": true,
+      "created": "2025-11-03", "last_login": "2026-05-01",
+      "access_keys": [],
+      "policies": ["AmazonS3FullAccess"]
+    },
+    {
+      "username": "erin.intern", "type": "human", "mfa_enabled": true,
+      "created": "2026-03-01", "last_login": null,
+      "access_keys": [],
+      "policies": ["ReadOnlyAccess"]
+    },
+    {
+      "username": "svc-backup", "type": "service", "mfa_enabled": false,
+      "created": "2024-06-01", "last_login": null,
+      "access_keys": [
+        {"id": "AKIASVCB0001", "created": "2024-06-01", "last_used": "2026-10-31", "active": true},
+        {"id": "AKIASVCB0002", "created": "2026-09-01", "last_used": null, "active": true}
+      ],
+      "policies": ["BackupWriteOnly"]
+    },
+    {
+      "username": "svc-reports", "type": "service", "mfa_enabled": false,
+      "created": "2026-08-01", "last_login": null,
+      "access_keys": [{"id": "AKIASVCR0001", "created": "2026-09-15", "last_used": "2026-10-31", "active": true}],
+      "policies": ["ReadOnlyAccess"]
+    },
+    {
+      "username": "frank.ops", "type": "human", "mfa_enabled": true,
+      "created": "2025-02-14", "last_login": "2026-11-01",
+      "access_keys": [{"id": "AKIAFRANK001", "created": "2026-09-20", "last_used": "2026-11-01", "active": true}],
+      "policies": ["PowerUserAccess"]
+    },
+    {
+      "username": "grace.hr", "type": "human", "mfa_enabled": true,
+      "created": "2025-06-30", "last_login": "2026-10-31",
+      "access_keys": [],
+      "policies": ["AmazonEC2FullAccess"]
+    }
+  ]
+}

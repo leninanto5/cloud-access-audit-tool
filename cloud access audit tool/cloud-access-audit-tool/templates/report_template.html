@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f3f5f9; color: #222; }
+  header { background: #2f4ea2; color: #fff; padding: 22px 32px; }
+  header h1 { margin: 0 0 6px 0; font-size: 24px; }
+  header p { margin: 0; opacity: .85; font-size: 14px; }
+  main { max-width: 1050px; margin: 24px auto; padding: 0 16px; }
+  .cards { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+  .card { flex: 1; min-width: 130px; background: #fff; border-radius: 10px; padding: 16px;
+          box-shadow: 0 1px 4px rgba(0,0,0,.08); text-align: center; }
+  .card .num { font-size: 30px; font-weight: bold; }
+  .card .lbl { font-size: 13px; color: #666; margin-top: 4px; }
+  .box { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 22px;
+         box-shadow: 0 1px 4px rgba(0,0,0,.08); overflow-x: auto; }
+  h2 { margin-top: 0; font-size: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  th { background: #f7f8fb; }
+  .tag { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 12px; font-weight: bold; color: #fff; }
+  .CRITICAL { background: #8e1b1b; } .HIGH { background: #d9534f; }
+  .MEDIUM { background: #e69b22; }   .LOW { background: #4a90c2; } .CLEAN { background: #3a9d5d; }
+  footer { text-align: center; color: #888; font-size: 12px; padding: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>$title</h1>
+  <p>Generated: $generated &nbsp;|&nbsp; Audit date: $as_of &nbsp;|&nbsp; Inactive after $inactive_days days &nbsp;|&nbsp; Key rotation every $key_age_days days</p>
+</header>
+<main>
+  <div class="cards">
+    <div class="card"><div class="num">$users_audited</div><div class="lbl">Users audited</div></div>
+    <div class="card"><div class="num">$users_flagged</div><div class="lbl">Users with findings</div></div>
+    <div class="card"><div class="num" style="color:#8e1b1b">$critical</div><div class="lbl">Critical</div></div>
+    <div class="card"><div class="num" style="color:#d9534f">$high</div><div class="lbl">High</div></div>
+    <div class="card"><div class="num" style="color:#e69b22">$medium</div><div class="lbl">Medium</div></div>
+    <div class="card"><div class="num" style="color:#4a90c2">$low</div><div class="lbl">Low</div></div>
+  </div>
+
+  <div class="box">
+    <h2>User risk ranking</h2>
+    <table>
+      <thead><tr><th>User</th><th>Type</th><th>Findings</th><th>Risk score</th><th>Risk level</th></tr></thead>
+      <tbody>
+$user_rows
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h2>Findings ($total_findings)</h2>
+    <table>
+      <thead><tr><th>Severity</th><th>User</th><th>Rule</th><th>Finding</th><th>Recommendation</th></tr></thead>
+      <tbody>
+$finding_rows
+      </tbody>
+    </table>
+  </div>
+</main>
+<footer>Cloud Access Audit Tool</footer>
+</body>
+</html>
